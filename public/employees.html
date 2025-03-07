@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="page-container">
+        <h2>Employees</h2>
+        <button onclick="openAddEmployeeModal()">Add Employee</button>
+        <button onclick="openUpdateEmployeeModal()">Update Employee</button>
+        <button onclick="openDeleteEmployeeModal()">Delete Employee</button>
+        <table id="employeesTable">
+            <thead>
+                <tr>
+                    <th>Employee ID</th>
+                    <th>Employee Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Employee rows will be dynamically added here -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Add Employee Modal -->
+    <div id="addEmployeeModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAddEmployeeModal()">&times;</span>
+            <h2>Add Employee</h2>
+            <div class="input-group">
+                <label for="addEmpId">Employee ID</label>
+                <input type="text" id="addEmpId" name="addEmpId" required>
+            </div>
+            <div class="input-group">
+                <label for="addEmpName">Employee Name</label>
+                <input type="text" id="addEmpName" name="addEmpName" required>
+            </div>
+            <div class="button-group">
+                <button type="button" onclick="confirmAddEmployee()">Save</button>
+                <button type="button" onclick="closeAddEmployeeModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Update Employee Modal -->
+    <div id="updateEmployeeModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeUpdateEmployeeModal()">&times;</span>
+            <h2>Update Employee</h2>
+            <div class="input-group">
+                <label for="updateEmpId">Employee ID</label>
+                <input type="text" id="updateEmpId" name="updateEmpId" required>
+            </div>
+            <div class="input-group">
+                <label for="newEmpName">New Employee Name</label>
+                <input type="text" id="newEmpName" name="newEmpName" required>
+            </div>
+            <div class="button-group">
+                <button type="button" onclick="confirmUpdateEmployee()">Update</button>
+                <button type="button" onclick="closeUpdateEmployeeModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Employee Modal -->
+    <div id="deleteEmployeeModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeDeleteEmployeeModal()">&times;</span>
+            <h2>Delete Employee</h2>
+            <div class="input-group">
+                <label for="deleteEmpId">Employee ID</label>
+                <input type="text" id="deleteEmpId" name="deleteEmpId" required>
+            </div>
+            <div class="button-group">
+                <button type="button" onclick="confirmDeleteEmployee()">Delete</button>
+                <button type="button" onclick="closeDeleteEmployeeModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page-container">
+        <h2>Departments</h2>
+        <button onclick="openAddDepartmentModal()">Add Department</button>
+        <button onclick="openUpdateDepartmentModal()">Update Department</button>
+        <button onclick="openDeleteDepartmentModal()">Delete Department</button>
+        <table id="departmentsTable">
+            <thead>
+                <tr>
+                    <th>Department ID</th>
+                    <th>Department Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Department rows will be dynamically added here -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Add Department Modal -->
+    <div id="addDepartmentModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAddDepartmentModal()">&times;</span>
+            <h2>Add Department</h2>
+            <div class="input-group">
+                <label for="addDeptId">Department ID</label>
+                <input type="text" id="addDeptId" name="addDeptId" required>
+            </div>
+            <div class="input-group">
+                <label for="addDeptName">Department Name</label>
+                <input type="text" id="addDeptName" name="addDeptName" required>
+            </div>
+            <div class="button-group">
+                <button type="button" onclick="confirmAddDepartment()">Save</button>
+                <button type="button" onclick="closeAddDepartmentModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Update Department Modal -->
+    <div id="updateDepartmentModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeUpdateDepartmentModal()">&times;</span>
+            <h2>Update Department</h2>
+            <div class="input-group">
+                <label for="updateDeptId">Department ID</label>
+                <input type="text" id="updateDeptId" name="updateDeptId" required>
+            </div>
+            <div class="input-group">
+                <label for="newDeptName">New Department Name</label>
+                <input type="text" id="newDeptName" name="newDeptName" required>
+            </div>
+            <div class="button-group">
+                <button type="button" onclick="confirmUpdateDepartment()">Update</button>
+                <button type="button" onclick="closeUpdateDepartmentModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Department Modal -->
+    <div id="deleteDepartmentModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeDeleteDepartmentModal()">&times;</span>
+            <h2>Delete Department</h2>
+            <div class="input-group">
+                <label for="deleteDeptId">Department ID</label>
+                <input type="text" id="deleteDeptId" name="deleteDeptId" required>
+            </div>
+            <div class="button-group">
+                <button type="button" onclick="confirmDeleteDepartment()">Delete</button>
+                <button type="button" onclick="closeDeleteDepartmentModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
